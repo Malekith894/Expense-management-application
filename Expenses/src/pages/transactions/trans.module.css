@@ -1,0 +1,35 @@
+.container{
+    display: grid;
+    width: 100%;
+    min-height: 100svh;
+    grid-template-areas: 
+    "filter content1 content1"
+    "filter content2 content2"
+    ;
+    grid-template-columns: 1fr repeat(2,4fr);
+    grid-template-rows: 1fr 4fr;
+}
+
+.sidebar{
+    grid-area: filter;
+    background-color: aqua;
+}
+
+.adding{
+    grid-area: content1;
+    background-color: antiquewhite;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main{
+    grid-area: content2;
+    background-color: blueviolet;
+    width: 100%;
+    border-radius: 10px;
+    border-color: gray;
+}
