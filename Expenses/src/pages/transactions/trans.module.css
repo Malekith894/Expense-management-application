@@ -3,16 +3,19 @@
     width: 100%;
     min-height: 100svh;
     grid-template-areas: 
-    "filter content1 content1"
+    "content1 content1 content1"
     "filter content2 content2"
     ;
     grid-template-columns: 1fr repeat(2,4fr);
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 2fr 4fr;
 }
 
 .sidebar{
     grid-area: filter;
     background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .adding{
@@ -26,10 +29,80 @@
     gap: 20px;
 }
 
+.filterbar{
+    display:flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: rgba(128, 128, 128, 0.671);
+    border-radius: 8px;
+    width: 200px;
+    height: 350px;
+    align-items: center;
+}
+
+.trans{
+    display: flex;
+    flex-direction: column;
+    width:500px ;
+    height: 230px;
+    border-radius: 8px;
+    gap: 8px;
+    background-color: rgba(0, 153, 255, 0.719);
+    padding: 4px;
+    justify-content: space-between;
+}
+
 .main{
     grid-area: content2;
     background-color: blueviolet;
     width: 100%;
     border-radius: 10px;
     border-color: gray;
+}
+
+.dateandprice{
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 20px;
+}
+.filters{
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width:500px){
+    .filterbar{
+       width: 300px; 
+       height: 200px;
+    }
+    .filters{
+    flex-direction: row;
+    }
+    .trans{
+        width: 350px;
+        height: 300px;
+    }
+    .filters{
+
+    }
+    .sidebar{
+        padding: 4px;
+    }
+    .dateandprice{
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 7px;
+    }
+    .container{
+        
+        min-height: 100svh;
+        grid-template-areas: 
+        "content1 content1 content1"
+        "content2 content2 content2"
+        "filter filter filter"
+        ;
+        grid-template-columns: 1fr repeat(2,4fr);
+        grid-template-rows: 2fr 4fr;
+    }
 }

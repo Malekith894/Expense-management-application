@@ -2,7 +2,7 @@ import { AiTwotoneEuroCircle } from "react-icons/ai";
 import { CiLogin } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import styles from './navbar.module.css'
-
+import { Link } from "react-router-dom";
 
 function Navbar(){
     return(
@@ -12,11 +12,13 @@ function Navbar(){
                 <p className="text-green-400">Expensify</p>
             </div>
             <div className="flex flex-row justify-center gap-3">
-                <p>Dashboard</p>
-                <p>Transaction</p>
+                <Link to='/Dashboard'>Dashboard</Link>
+                <Link to='/Transaction'>Transaction</Link>
             </div>
             <div>
-                <CiLogin size={25}/>
+                <Link to='/Login'>
+                    <CiLogin size={25}/>
+                </Link>
             </div>
         </div>
 
