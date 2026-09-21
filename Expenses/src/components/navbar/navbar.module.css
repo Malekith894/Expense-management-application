@@ -4,8 +4,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgba(128, 128, 128, 0.158);
+    background-color:#92400e;
     padding: 9px;
+    color: white;
 }
 
 @media(max-width:1255px){

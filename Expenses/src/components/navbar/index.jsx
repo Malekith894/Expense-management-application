@@ -12,7 +12,7 @@ function Navbar(){
                 <p className="text-green-400">Expensify</p>
             </div>
             <div className="flex flex-row justify-center gap-3">
-                <Link to='/Dashboard'>Dashboard</Link>
+                <Link to='/'>Dashboard</Link>
                 <Link to='/Transaction'>Transaction</Link>
             </div>
             <div>

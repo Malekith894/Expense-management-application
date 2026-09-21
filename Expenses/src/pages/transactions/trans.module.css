@@ -12,7 +12,7 @@
 
 .sidebar{
     grid-area: filter;
-    background-color: aqua;
+    background-color: rgba(222, 184, 135, 0.418);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@
 
 .adding{
     grid-area: content1;
-    background-color: antiquewhite;
+    background-color: rgba(222, 184, 135, 0.418);
     display: flex;
     padding: 10px;
     flex-direction: row;
@@ -33,7 +33,7 @@
     display:flex;
     flex-direction: column;
     gap: 12px;
-    background-color: rgba(128, 128, 128, 0.671);
+    background-color: rgba(222, 184, 135, 0.418);
     border-radius: 8px;
     width: 200px;
     height: 350px;
@@ -47,16 +47,16 @@
     height: 230px;
     border-radius: 8px;
     gap: 8px;
-    background-color: rgba(0, 153, 255, 0.719);
+    background-color:rgba(222, 184, 135, 0.418);
     padding: 4px;
     justify-content: space-between;
 }
 
 .main{
     grid-area: content2;
-    background-color: blueviolet;
+    background-color:rgba(222, 184, 135, 0.418);
     width: 100%;
-    border-radius: 10px;
+    
     border-color: gray;
 }
 
@@ -69,6 +69,10 @@ gap: 20px;
 .filters{
     display: flex;
     flex-direction: column;
+}
+.tab{
+    width: 100%;
+    background-color: rgba(222, 184, 135, 0.418);
 }
 
 @media(max-width:500px){
@@ -83,9 +87,7 @@ gap: 20px;
         width: 350px;
         height: 300px;
     }
-    .filters{
-
-    }
+    
     .sidebar{
         padding: 4px;
     }

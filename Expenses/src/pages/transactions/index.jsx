@@ -83,16 +83,16 @@ function Transaction(){
                                 <label>Price search</label>
                                 <div className='flex flex-col'>
                                     <label>Minimum price</label>
-                                    <input type="number" className="rounded-xl border-2 min-range" min="0" max="10000" value={minprice} onChange={(e) => setminprice(e.target.value)} step="1"/>
+                                    <input type="number" className="p-1 rounded-xl border-2 min-range" min="0" max="10000" value={minprice} onChange={(e) => setminprice(e.target.value)} step="1"/>
                                 </div>
                                 <div className='flex flex-col'>
                                     <label>Maximum price</label>
-                                    <input type="number" className="rounded-xl border-2 max-range" min="0" max="10000" value={maxprice} onChange={(e) => setmaxprice(e.target.value)} step="1"/>
+                                    <input type="number" className="p-1 rounded-xl border-2 max-range" min="0" max="10000" value={maxprice} onChange={(e) => setmaxprice(e.target.value)} step="1"/>
                                 </div>
                             </div>
                             <div className='flex flex-col items-start pr-3 gap-2'>
                                 <label>Category search</label>
-                                <input className='w-[140px] rounded-xl pl-1 border-2' type='text' onChange={(e) => setcat(e.target.value)}/>
+                                <input className='p-1 w-[140px] rounded-xl pl-1 border-2' type='text' onChange={(e) => setcat(e.target.value)}/>
                             </div>
                     </div>
                 </div>
@@ -140,14 +140,15 @@ function Transaction(){
                         
                     </div>
                     <div>
-                        <button className='w-[100px] h-[40px] rounded-xl bg-amber-300' onClick={handleclick}>Add</button>
+                        <button className='w-[100px] h-[40px] rounded-xl bg-amber-800 text-gray-50' onClick={handleclick}>Add</button>
                     </div>
                 </div>
                 
             </div>
             <div className={styles.main}>
-                        <table className='w-full '>
-                            <thead className="bg-gray-100">
+                <div className="w-full overflow-x-auto">
+                        <table className={styles.tab}>
+                            <thead className="bg-[rgba(222,184,135,0.418)]">
                                 <tr>
                                     <th className="px-5 py-4 text-left text-sm font-semibold text-gray-700">
                                         Date
@@ -172,10 +173,10 @@ function Transaction(){
                                         <tr key={item.id}>
                                             <td className="px-5 py-4 text-left text-sm font-semibold text-gray-500">{item.date}</td>
                                             <td className="px-5 py-4 text-left text-sm font-semibold text-gray-500">{item.category}</td>
-                                            <td className="px-5 py-4 text-left text-sm font-semibold text-gray-500">${item.price}</td>
-                                            <td className="px-5 py-4 text-left text-sm font-semibold text-gray-500">{item.transfer}</td>
-                                            <td className="px-5 py-4 text-left text-sm font-semibold text-gray-500"> 
-                                                <button className='w-[100px] h-[40px] rounded-xl bg-amber-300' onClick={()=> handleremove(item.id)}>Remove</button>
+                                            <td className="px-2 py-4 text-left text-sm font-semibold text-gray-500">${item.price}</td>
+                                            <td className="px-2 py-4 text-left text-sm font-semibold text-gray-500">{item.transfer}</td>
+                                            <td className=" px-2 py-2 text-sm font-semibold text-gray-500"> 
+                                                <button className=' px-3 py-2 rounded-lg bg-amber-800 text-gray-50 whitespace-nowrap ' onClick={()=> handleremove(item.id)}>Remove</button>
                                             </td>
                                         </tr>
                                     )
@@ -183,6 +184,7 @@ function Transaction(){
                             </tbody>
                             
                         </table>
+                        </div>
             </div>
         </div>
     )
