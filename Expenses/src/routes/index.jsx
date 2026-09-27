@@ -1,10 +1,10 @@
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
-import Dashboard from '../pages/dashboard'
-import Transaction from '../pages/transactions'
-import Layout from '../pages/layout'
-import { Children } from 'react'
-import Login from '../pages/login'
-
+import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import Dashboard from '../pages/dashboard';
+import Transaction from '../pages/transactions';
+import Layout from '../pages/layout';
+import { Children } from 'react';
+import Login from '../pages/login';
+import Signup from '../pages/signup';
 
 const router=createBrowserRouter([
   {
@@ -22,6 +22,10 @@ const router=createBrowserRouter([
         {
             path:'/Login',
             element:<Login/>
+        },
+        {
+            path:'Signup',
+            element:<Signup/>
         }
     ]
 }

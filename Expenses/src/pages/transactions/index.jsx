@@ -146,45 +146,20 @@ function Transaction(){
                 
             </div>
             <div className={styles.main}>
-                <div className="w-full overflow-x-auto">
-                        <table className={styles.tab}>
-                            <thead className="bg-[rgba(222,184,135,0.418)]">
-                                <tr>
-                                    <th className="px-5 py-4 text-left text-sm font-semibold text-gray-700">
-                                        Date
-                                    </th>
-                                    <th className="px-5 py-4 text-left text-sm font-semibold text-gray-700">
-                                        Category
-                                    </th>
-                                    <th className="px-5 py-4 text-left text-sm font-semibold text-gray-700">
-                                        Price
-                                    </th>
-                                    <th className="px-5 py-4 text-left text-sm font-semibold text-gray-700">
-                                        transfer shape
-                                    </th>
-                                    <th className="px-5 py-4 text-left text-sm font-semibold text-gray-700">
-                                        
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {filteredrows.map(function(item){
-                                    return(
-                                        <tr key={item.id}>
-                                            <td className="px-5 py-4 text-left text-sm font-semibold text-gray-500">{item.date}</td>
-                                            <td className="px-5 py-4 text-left text-sm font-semibold text-gray-500">{item.category}</td>
-                                            <td className="px-2 py-4 text-left text-sm font-semibold text-gray-500">${item.price}</td>
-                                            <td className="px-2 py-4 text-left text-sm font-semibold text-gray-500">{item.transfer}</td>
-                                            <td className=" px-2 py-2 text-sm font-semibold text-gray-500"> 
-                                                <button className=' px-3 py-2 rounded-lg bg-amber-800 text-gray-50 whitespace-nowrap ' onClick={()=> handleremove(item.id)}>Remove</button>
-                                            </td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                            
-                        </table>
-                        </div>
+                
+                    {filteredrows.map(function(item){
+                        return(
+                            <div className={styles.rowstyle}>
+                                <p>{item.date}</p>
+                                <p>{item.category}</p>
+                                <p>{item.price}</p>
+                                <p>{item.transfer}</p>
+                                <button onClick={()=> handleremove(item.id)} className='text-gray-50 bg-amber-800 rounded-xl w-[70px] h-[40px]'>Remove</button>
+                            </div>
+                        )
+                    })}
+                      
+                
             </div>
         </div>
     )

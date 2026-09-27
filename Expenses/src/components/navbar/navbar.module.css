@@ -5,8 +5,9 @@
     flex-direction: row;
     justify-content: space-between;
     background-color:#92400e;
-    padding: 9px;
+    padding: 12px;
     color: white;
+    
 }
 
 @media(max-width:1255px){

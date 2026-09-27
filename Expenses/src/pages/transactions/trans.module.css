@@ -56,8 +56,25 @@
     grid-area: content2;
     background-color:rgba(222, 184, 135, 0.418);
     width: 100%;
-    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
     border-color: gray;
+}
+
+.rowstyle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:1500px ;
+    height: 80px;
+    background-color: antiquewhite;
+    border-radius: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    
 }
 
 .dateandprice{
