@@ -1,0 +1,16 @@
+.wrapper{
+    display: grid;
+    grid-template-areas: 
+    "content1 content2"
+    ;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.intro{
+    grid-area: "content2";
+}
+
+.image{
+    grid-area: "content1";
+}

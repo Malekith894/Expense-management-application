@@ -5,6 +5,7 @@ import Layout from '../pages/layout';
 import { Children } from 'react';
 import Login from '../pages/login';
 import Signup from '../pages/signup';
+import Display from '../pages/display';
 
 const router=createBrowserRouter([
   {
@@ -12,8 +13,12 @@ const router=createBrowserRouter([
     element:<Layout/>,
     children:[
         {
-            path:'/',
+            path:'/Dashboard',
             element:<Dashboard/>,
+        },
+        {
+            path:'/',
+            element:<Display/>
         },
         {
             path:'/Transaction',

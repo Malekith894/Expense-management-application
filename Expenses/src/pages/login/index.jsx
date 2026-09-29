@@ -3,10 +3,11 @@ import {useForm} from "react-hook-form"
 import {yupResolver} from "@hookform/resolvers/yup";
 import { Authcontext } from "../../context/logicon";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 function Login(){
 
+    const navigate=useNavigate()
     const {auth,setauth}=useContext(Authcontext)
 
     const schema=yup.object({
@@ -17,12 +18,8 @@ function Login(){
     const{register,handleSubmit,formState:{errors}}=useForm({resolver:yupResolver(schema)})
     function onSubmit(values){
         console.log({values,errors})
-    }
-
-    function handlelogin(){
-        if(Object.keys(errors).length==0){
-            setauth(true)
-        } 
+        setauth(true)
+        navigate("/")
     }
 
     return(
@@ -42,7 +39,7 @@ function Login(){
                                 {errors.password && <span className="text-red-600">{errors.password.message}</span>}
                             </div>
                             <div>
-                                <button onClick={handlelogin} className="w-[80px] h-[50px] bg-emerald-300 rounded-xl">Login</button>
+                                <button type="submit" className="w-[80px] h-[50px] bg-emerald-300 rounded-xl">Login</button>
                             </div>
                         </div>
                     </div>
