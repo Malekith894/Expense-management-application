@@ -3,7 +3,7 @@ import Dashboard from '../pages/dashboard';
 import Transaction from '../pages/transactions';
 import Layout from '../pages/layout';
 import { Children } from 'react';
-import Login from '../pages/login';
+
 import Signup from '../pages/signup';
 import Display from '../pages/display';
 
@@ -24,10 +24,7 @@ const router=createBrowserRouter([
             path:'/Transaction',
             element:<Transaction/>,
         },
-        {
-            path:'/Login',
-            element:<Login/>
-        },
+        
         {
             path:'Signup',
             element:<Signup/>

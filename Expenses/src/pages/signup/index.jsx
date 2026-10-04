@@ -5,17 +5,20 @@ import * as yup from "yup"
 import { useContext } from 'react'
 import { Authcontext } from '../../context/logicon'
 import { useNavigate } from 'react-router-dom';
+import { Usercontext } from '../../context/userinfo'
 
 
 function Signup(){
 
+    const {info,setinfo}=useContext(Usercontext);
     const {auth,setauth}=useContext(Authcontext);
     const navigate=useNavigate();
+
     const schema=yup.object({
         username:yup.string().required().min(6).max(15),
         password:yup.string().required().min(8),
         country:yup.string().required(),
-        phone:yup.string().required().min(13),
+        phone:yup.string().required().min(11),
         email:yup.string().required().email()
     })
 
@@ -24,8 +27,10 @@ function Signup(){
     function onsubmit(values){
         console.log({values,errors})
         setauth(true)
-        navigate("/")
-
+        console.log(values)
+        setinfo(values)
+        localStorage.setItem("Userinfo",JSON.stringify(values))
+        navigate("/Dashboard")
     };
     
 
@@ -35,7 +40,6 @@ function Signup(){
             <div className={styles.wrapper}>
                 <h2>Welcome to Expensify<br></br> you can now trail where your money goes!</h2>
                 
-                <h3></h3>
                 <div className='flex flex-col items-center m-5'>
                     <label className='pr-38' htmlFor='username'>Username</label>
                     <input className='pl-1 border rounded-[6px] w-[250px]' {...register("username")} id='username'/>

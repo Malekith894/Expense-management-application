@@ -9,6 +9,9 @@
 
 .intro{
     grid-area: "content2";
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image{

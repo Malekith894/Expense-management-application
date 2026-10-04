@@ -21,12 +21,11 @@
 .adding{
     grid-area: content1;
     background-color: rgba(222, 184, 135, 0.418);
-    display: flex;
-    padding: 10px;
+    display: flex; 
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    
 }
 
 .filterbar{
@@ -43,13 +42,14 @@
 .trans{
     display: flex;
     flex-direction: column;
-    width:500px ;
+    width:400px ;
     height: 230px;
     border-radius: 8px;
     gap: 8px;
     background-color:rgba(222, 184, 135, 0.418);
     padding: 4px;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .main{
@@ -58,7 +58,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
     border-color: gray;
 }
@@ -82,6 +82,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 gap: 20px;
+padding-left: 41px;
 }
 .filters{
     display: flex;
@@ -90,6 +91,13 @@ gap: 20px;
 .tab{
     width: 100%;
     background-color: rgba(222, 184, 135, 0.418);
+}
+.catty{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7px;
+    
 }
 
 @media(max-width:500px){
@@ -102,19 +110,21 @@ gap: 20px;
     }
     .trans{
         width: 350px;
-        height: 300px;
+        height: 250px;
     }
     
     .sidebar{
         padding: 4px;
     }
     .dateandprice{
-        flex-direction: column;
         gap: 10px;
-        padding-left: 7px;
+        padding-left: 64px;
+    }
+    .rowstyle{
+        width: 340px;
+        height:100px;
     }
     .container{
-        
         min-height: 100svh;
         grid-template-areas: 
         "content1 content1 content1"

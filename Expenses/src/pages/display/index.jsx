@@ -9,8 +9,10 @@ function Display(){
             <div className={styles.wrapper}>
                 <img className={styles.image} src={first_page} alt='app image' />
                 <div className={styles.intro}>
-                    <h1> Welcome to expensify! </h1>
-                    <h2> here you can track your expenses and manage your income</h2>
+                    <div className='w-[400px] h-[300px] rounded-[8px] text-red-600'>
+                        <h1 className='text-xl'> Welcome to expensify! </h1>
+                        <h2 className='text-xl'> here you can track your income and manage your expenses</h2>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,48 +1,41 @@
 .total_content{
-    height:140px;
-    width: 440px;
-    padding: 6px;
-    gap: 24px;
-    background-color: rgba(128, 128, 128, 0.26);
+    display: grid;
+    grid-template-areas: 
+    "content1 content1 content1"
+    "content2 content2 content3"
+    ;
+    width: 100%;
+    min-height: 100svh;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 3fr 3fr 2fr;
+}
+.abstract{
+    grid-area: content1;
+    background-color: beige;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
     align-items: center;
-    border-radius: 8px;
+    justify-content: center;
 }
-
-.overview{
+.user{
+    grid-area: content3;
+    background-color: aqua;
     display: flex;
-    flex-direction: row;  
-    gap:120px;
+    justify-content: center;
+}
+.money{
+    grid-area: content2;
+    background-color:blueviolet;
 }
 
-.boxes{
-    min-height: 700px;
-    width: 600px;
-    border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.26);
+.userinfo{
+    height: 500px;
+    width: 80%;
+    border-radius: 8px;
+    margin-top: 4px;
+    padding: 6px;
+    background-color: gray;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    justify-content: space-between;
 }
 
-
-@media(max-width:1255px){
-    .overview{
-        flex-direction:column;
-        gap:12px;
-    }
-    .total_content{
-        width: 350px;
-    }
-    .boxes{
-        min-height: 700px;
-        width: 350px;
-        border-radius: 10px;
-        background-color: rgba(128, 128, 128, 0.26);
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-    }
-}
