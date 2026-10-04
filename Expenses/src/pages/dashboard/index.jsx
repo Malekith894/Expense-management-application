@@ -3,6 +3,7 @@ import styles from './board.module.css';
 import { useContext, useEffect, useState } from "react";
 import { Usercontext } from "../../context/userinfo";
 import { Calcontext } from "../../context/calculation";
+import {PieChart,Pie,Cell,Tooltip,Legend,ResponsiveContainer,} from "recharts";
 
 
 function Dashboard(){
@@ -11,20 +12,60 @@ function Dashboard(){
     const {cal,setcal}=useContext(Calcontext);
     
     const {income,expense}=cal.reduce(function(total,item){
+        
         if(item.transfer=="income"){
             total.income+=Number(item.price);
         } else{
             total.expense+=Number(item.price);
         }
 
-        return total
+        return total;
     },{income:0,expense:0})
 
+    const {expensecat,incomecat}=cal.reduce(function(acc,item){
+        const category=item.category;
+        const price=Number(item.price);
+
+        if(item.transfer=="expense"){
+
+            if(!acc.expensecat[category]){
+                acc.expensecat[category]=0;
+            }
+    
+            acc.expensecat[category]+=price;
+        } else if(item.transfer=="income"){
+            
+            if(!acc.incomecat[category]){
+                acc.incomecat[category]=0;
+            }
+    
+            acc.incomecat[category]+=price;
+        }
+
+        return acc
+    },{expensecat:{},incomecat:{}});
+
+    const pieData=Object.entries(expensecat).map(function([category,price]){
+        return(
+            {name:category,
+             value:price
+            }
+        )
+    })
+    console.log(pieData)
     return(
             <div className={styles.total_content}>
+                <ResponsiveContainer width="50%" height={100}>
+                <PieChart>
+                    <Pie data={pieData} dataKey="value"nameKey="name"outerRadius={120}/>
+                    <Tooltip/>
+                    <Legend/>
+                </PieChart>
+
+                </ResponsiveContainer>
                 <div className={styles.abstract}>
                 <div className="h-[150px] w-[400px] rounded-xl bg-amber-100 rounded-xl flex flex-col justify-evenly">
-                    <h2 className="font-bold pr-5">Total Balance</h2>
+                    <h2 className="font-bold pr-5">Total Balance: ${income-expense}</h2>
                     <div className="flex flex-row items-center justify-center gap-12">
                             <div className="flex flex-row items-center gap-1">
                                 <BsWallet2 size={40} color="green"/>
