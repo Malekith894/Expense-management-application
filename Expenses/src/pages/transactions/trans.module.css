@@ -1,13 +1,14 @@
 .container{
     display: grid;
     width: 100%;
-    min-height: 100svh;
+    height: 100svh;
+    min-height: 0;
     grid-template-areas: 
     "content1 content1 content1"
     "filter content2 content2"
     ;
     grid-template-columns: 1fr repeat(2,4fr);
-    grid-template-rows: 2fr 4fr;
+    grid-template-rows: 300px 4fr;
 }
 
 .sidebar{
@@ -16,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .adding{
@@ -25,7 +27,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
 }
 
 .filterbar{
@@ -35,8 +36,9 @@
     background-color: rgba(222, 184, 135, 0.418);
     border-radius: 8px;
     width: 200px;
-    height: 350px;
+    height: 280px;
     align-items: center;
+    padding-top: 8px;
 }
 
 .trans{
@@ -50,6 +52,7 @@
     padding: 4px;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .main{
@@ -61,6 +64,8 @@
     gap: 15px;
     align-items: center;
     border-color: gray;
+    overflow-y: auto;
+    min-height: 0;
 }
 
 .rowstyle{
@@ -87,6 +92,7 @@ padding-left: 41px;
 .filters{
     display: flex;
     flex-direction: column;
+    gap:8px;
 }
 .tab{
     width: 100%;
@@ -102,8 +108,9 @@ padding-left: 41px;
 
 @media(max-width:500px){
     .filterbar{
-       width: 300px; 
-       height: 200px;
+       width: 350px; 
+       height: 180px;
+       margin: 10px;
     }
     .filters{
     flex-direction: row;
@@ -111,8 +118,11 @@ padding-left: 41px;
     .trans{
         width: 350px;
         height: 250px;
+        margin-top: 8px;
     }
-    
+    .main{
+        padding-top: 15px;
+    }
     .sidebar{
         padding: 4px;
     }

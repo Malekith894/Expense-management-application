@@ -82,20 +82,19 @@ function Transaction(){
                 <div className={styles.filterbar} >
                     <h2>Search bar</h2>
                         <div className={styles.filters}>
-                            <div className='flex flex-col items-start pr-6 gap-2'>
-                                <label>Price search</label>
+                            <div className='flex flex-col items-start pr-6 gap-2'>  
                                 <div className='flex flex-col'>
-                                    <label>Minimum price</label>
-                                    <input type="number" className="pl-1 w-[140px] rounded-xl border-2 min-range" min="0" max="10000" value={minprice} onChange={(e) => setminprice(e.target.value)} step="1"/>
+                                    <label className='pr-5'>Minimum price</label>
+                                    <input type="number" className="pl-1 w-[150px] rounded-[8px] border-2 min-range" min="0" max="10000" value={minprice} onChange={(e) => setminprice(e.target.value)} step="1"/>
                                 </div>
                                 <div className='flex flex-col'>
-                                    <label>Maximum price</label>
-                                    <input type="number" className="pl-1 w-[140px] rounded-xl border-2 max-range" min="0" max="10000" value={maxprice} onChange={(e) => setmaxprice(e.target.value)} step="1"/>
+                                    <label className='pr-5'>Maximum price</label>
+                                    <input type="number" className="pl-1 w-[150px] rounded-[8px] border-2 max-range" min="0" max="10000" value={maxprice} onChange={(e) => setmaxprice(e.target.value)} step="1"/>
                                 </div>
                             </div>
-                            <div className='flex flex-col items-start pr-3 gap-2'>
-                                <label>Category search</label>
-                                <input className='pl-1 w-[150px] rounded-xl pl-1 border-2' type='text' onChange={(e) => setcat(e.target.value)}/>
+                            <div className='flex flex-col items-start pr-3 '>
+                                <label>Category</label>
+                                <input className='pl-1 w-[150px] rounded-[8px] pl-1 border-2' type='text' onChange={(e) => setcat(e.target.value)}/>
                             </div>
                     </div>
                 </div>
@@ -119,7 +118,7 @@ function Transaction(){
                         </div>
                         <div className='flex flex-col items-start '>
                             <label>Price</label>
-                            <input className='w-[110px]' placeholder='100' value={trans.price} onChange={(e) => settrans({...trans,price:e.target.value})}></input>
+                            <input className='w-[110px] border-2 rounded-[6px] pl-1' placeholder='100' value={trans.price} onChange={(e) => settrans({...trans,price:e.target.value})}></input>
                         </div>
                     </div>
                     <div className={styles.catty}>
@@ -149,10 +148,9 @@ function Transaction(){
                 
             </div>
             <div className={styles.main}>
-                
                     {filteredrows.map(function(item){
                         return(
-                            <div className={styles.rowstyle}>
+                            <div key={item.id} className={styles.rowstyle}>
                                 <p>Date: {item.date}</p>
                                 <p>Category: {item.category}</p>
                                 <p>Price: ${item.price}</p>
@@ -162,7 +160,6 @@ function Transaction(){
                         )
                     })}
                       
-                
             </div>
         </div>
     )

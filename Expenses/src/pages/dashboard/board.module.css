@@ -11,20 +11,25 @@
 }
 .abstract{
     grid-area: content1;
-    background-color: beige;
+    background-color:rgba(222, 184, 135, 0.418);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .user{
     grid-area: content3;
-    background-color: aqua;
+    background-color:rgba(222, 184, 135, 0.418);
     display: flex;
     justify-content: center;
 }
 .money{
     grid-area: content2;
-    background-color:blueviolet;
+    background-color:rgba(222, 184, 135, 0.418);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items:flex-start;
+    
 }
 
 .userinfo{
@@ -37,5 +42,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: rgba(222, 184, 135, 0.281);
+    
 }
 

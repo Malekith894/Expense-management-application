@@ -13,7 +13,7 @@ function Navbar(){
     return(
         <div className={styles.wrapper}>
             <div className="flex flex-row ">
-                <AiTwotoneEuroCircle size={25} />
+                <AiTwotoneEuroCircle size={25} className="m-0.5"/>
                 <p className="text-white">Expensify</p>
             </div>
             {auth==true ? (
