@@ -81,64 +81,7 @@ function Dashboard(){
     return(
             <div className={styles.total_content}>
                 <div className={styles.abstract}>
-                <div className="h-[150px] w-[400px] bg-[rgba(222,184,135,0.241)] rounded-xl flex flex-col justify-evenly">
-                    <h2 className="font-bold pr-5">Total Balance: ${income-expense}</h2>
-                    <div className="flex flex-row items-center justify-center gap-12">
-                            <div className="flex flex-row items-center gap-1">
-                                <BsWallet2 size={40} color="green"/>
-                                <div className="flex flex-col items-start">
-                                    <p className="text-xs text-green-700">${income}</p>
-                                    <label className="text-xs text-green-700">Total income</label>
-                                </div>
-                            </div>
-                            <div>|</div>
-                            <div className="flex flex-row items-center gap-1">
-                                <BsWallet2 size={40} color="red"/>
-                                <div className="flex flex-col items-start">
-                                    <p className="text-xs text-red-600">${expense}</p>
-                                    <label className="text-xs text-red-600">Total expense</label>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                </div>
-                <div className={styles.user}>
-                    <div className={styles.userinfo}>
-                        <div className="flex flex-col gap-2 text-justify pl-4 ">
-                            <h1 className="text-xl">Profile information</h1>
-                            <div >
-                                <h1>Hello {info.username}</h1>
-                                <h3>you can use the transaction part to enter your income and expenses.</h3>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-4 pb-4.5 text-justify pl-4">
-                            <h4>Phone number: {info.phone}</h4>
-                            <h4>Email:{info.email}</h4>
-                            <h4>Location: {info.country}</h4>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.money}>
-                    <div className="w-1/2">
-                        <ResponsiveContainer width="100%" height={300}>
-                        <PieChart>
-                            <Pie data={pieData} dataKey="value" cx="48%" cy="50%" nameKey="name" outerRadius={110} label>
-                                {pieData.map((entry, index) => (
-                                    <Cell
-                                        key={`cell-${entry.name}`}
-                                        fill={`hsl(${index * (360 / pieData.length)}, 70%, 55%)`}
-                                        stroke="#000"
-                                        strokeWidth={1}
-                                    />
-                                    ))}
-                            </Pie>
-                            <Tooltip/>
-                            <Legend />
-                        </PieChart>
-                        </ResponsiveContainer>
-
-                    </div>
-                    <div className="w-1/2 ">
+                    <div className={styles.pii}>
                         <ResponsiveContainer width="100%" height={300}>
                             <LineChart data={chartData}>
                                 <CartesianGrid strokeDasharray="3 3" />
@@ -181,11 +124,70 @@ function Dashboard(){
                                     strokeWidth={2}
                                 />
                                 
-                                
-                                 
                             </LineChart>
                         </ResponsiveContainer>
                     </div>
+                </div>
+                
+                <div className={styles.money}>
+                    <div className={styles.userinfo}>
+                        <div className="flex flex-col gap-2 text-justify pl-4 ">
+                            <h1 className="text-xl">Profile information</h1>
+                            <div>
+                                <h1>Hello {info.username}</h1>
+                                <h3>you can use the transaction part to enter your income and expenses.</h3>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-4 pb-4.5 text-justify pl-4">
+                            <h4>Phone number: {info.phone}</h4>
+                            <h4>Email:{info.email}</h4>
+                            <h4>Location: {info.country}</h4>
+                        </div>
+                    </div>
+                    <div className={styles.piechart}>
+                        <ResponsiveContainer width="100%" height={300}>
+                        <PieChart>
+                            <Pie data={pieData} dataKey="value" cx="48%" cy="50%" nameKey="name" outerRadius={110} label>
+                                {pieData.map((entry, index) => (
+                                    <Cell
+                                        key={`cell-${entry.name}`}
+                                        fill={`hsl(${index * (360 / pieData.length)}, 70%, 55%)`}
+                                        stroke="#000"
+                                        strokeWidth={1}
+                                    />
+                                    ))}
+                            </Pie>
+                            <Tooltip/>
+                            <Legend layout="vertical"align="right" verticalAlign="middle"/>
+                        </PieChart>
+                        </ResponsiveContainer>
+                    </div>
+                    <div className={styles.balance} >
+                        <div>
+                            <h2 className="font-bold pr-5">Total Balance: ${income-expense}</h2>
+                            <div className="flex flex-row items-center justify-center gap-12">
+                                    <div className="flex flex-row items-center gap-1">
+                                        <BsWallet2 size={40} color="green"/>
+                                        <div className="flex flex-col items-start">
+                                            <p className="text-xs text-green-700">${income}</p>
+                                            <label className="text-xs text-green-700">Total income</label>
+                                        </div>
+                                    </div>
+                                    <div>|</div>
+                                    <div className="flex flex-row items-center gap-1">
+                                        <BsWallet2 size={40} color="red"/>
+                                        <div className="flex flex-col items-start">
+                                            <p className="text-xs text-red-600">${expense}</p>
+                                            <label className="text-xs text-red-600">Total expense</label>
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </div>
+                            <div>
+                                <p>By spending less on stuff people buy, you can buy things people could not</p>
+                            </div>
+                </div>
                     
                 </div>
             </div> 

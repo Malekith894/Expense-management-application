@@ -1,13 +1,13 @@
 .total_content{
     display: grid;
     grid-template-areas: 
-    "content1 content1 content1"
-    "content2 content2 content3"
+    "content1 "
+    "content2 "
     ;
     width: 100%;
-    min-height: 100svh;
+    height: 100svh;
     grid-template-rows: 1fr 4fr;
-    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-columns: 1fr;
 }
 .abstract{
     grid-area: content1;
@@ -16,25 +16,20 @@
     align-items: center;
     justify-content: center;
 }
-.user{
-    grid-area: content3;
-    background-color:rgba(222, 184, 135, 0.418);
-    display: flex;
-    justify-content: center;
-}
+
 .money{
     grid-area: content2;
     background-color:rgba(222, 184, 135, 0.418);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
     align-items:flex-start;
-    
+    justify-content: center;
 }
 
 .userinfo{
     height: 500px;
-    width: 80%;
+    width: 350px;
     border-radius: 8px;
     margin-top: 4px;
     padding: 6px;
@@ -43,6 +38,50 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: rgba(222, 184, 135, 0.281);
-    
+}
+.piechart{
+    width: 450px;
+    height: 500px;
+    padding: 2px;
+    border-radius: 8px;
+    margin-top: 4px;
+    background-color: rgba(222,184,135,0.241);
 }
 
+.balance{
+    height:500px;
+    width:400px;
+    border-radius: 8px;
+    background-color: rgba(222,184,135,0.241);
+    display: flex;
+    flex-direction: column;
+    padding: 11px;
+    margin-top: 4px;
+    justify-content: space-between;
+}
+.pii{
+    width: 90%;
+}
+@media(max-width:500px){
+    .total_content{
+        min-height: 0;
+        height: 100svh;
+    }
+    .money{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .pii{
+        width: 100%;
+    }
+    .userinfo{
+        width: 380px;
+    }
+    .piechart{
+        width: 380px;
+    }
+    .balance{
+        width: 380px;
+    }
+}
